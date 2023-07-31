@@ -1,3 +1,5 @@
+//https://www.algoexpert.io/questions/index-equals-value
+
 import java.util.*;
 
 class Program {
