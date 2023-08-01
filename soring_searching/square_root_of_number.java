@@ -1,4 +1,4 @@
-//https://www.codingninjas.com/studio/problems/square-root_893351?source=youtube&campaign=love_babbar_codestudio2&utm_source=youtube&utm_medium=affiliate&utm_campaign=love_babbar_codestudio2
+//https://leetcode.com/problems/sqrtx/
 
 class Solution {
     public int mySqrt(int x) {
