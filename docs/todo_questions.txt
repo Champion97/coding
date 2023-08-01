@@ -1,4 +1,0 @@
-Recusrsion : 
-factorial
-2 power n
-print numbers
