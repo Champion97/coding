@@ -1,3 +1,5 @@
+//to find number of occurance of target. Same as previous problem, but only involves taking the difference and adding 1, to account for the number of elements
+
 public class Solution {
     public static int count(int array[], int n, int target) {
         //Your code goes here int n = array.length;
