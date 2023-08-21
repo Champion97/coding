@@ -1,3 +1,4 @@
+//Upon submission, time limit exceeded is expected.
 //https://leetcode.com/problems/sqrtx/
 
 class Solution {
