@@ -1,4 +1,5 @@
 //https://www.algoexpert.io/questions/bubble-sort
+//n-i-1 because in every iteration, the ith element from the right gets sorted.
 
 import java.util.*;
 
