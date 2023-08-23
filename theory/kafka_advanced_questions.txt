@@ -1,0 +1,52 @@
+Certainly, here are some more advanced and tricky questions, as well as corner cases, that you should be prepared to address during a Kafka interview:
+
+**1. What is the role of the `acks` configuration in Kafka Producer?**
+
+   Answer: The `acks` configuration in the Kafka Producer specifies the number of acknowledgments a producer requires from the broker before considering a message as sent. It can take values such as `0` (no acknowledgment), `1` (acknowledgment from the leader), or `-1` (acknowledgment from all replicas). Choosing the appropriate setting balances between message durability and producer throughput.
+
+**2. Explain Kafka's message delivery semantics: At most once, At least once, and Exactly once.**
+
+   Answer:
+   - **At Most Once**: Messages are sent to Kafka, but there's no guarantee of successful delivery. Some messages may be lost.
+   - **At Least Once**: Messages are delivered to Kafka and acknowledged by the leader. If a consumer fails to acknowledge processing, the same message might be delivered again.
+   - **Exactly Once**: This is the most stringent guarantee. It ensures both producer and consumer side deduplication. Kafka 0.11+ supports exactly-once semantics using idempotence and transactions.
+
+**3. How can you handle duplicate processing of messages in a Kafka consumer?**
+
+   Answer: To handle duplicate processing, you can use idempotent producers to ensure messages are not duplicated on the producer side. On the consumer side, you can track processed messages and deduplicate them using the message's unique key.
+
+**4. Explain the Kafka Offset Commit Strategies.**
+
+   Answer: Kafka consumers can use different offset commit strategies:
+   - **Auto Commit**: The consumer automatically commits offsets periodically. It's simple but might lead to message duplication in case of failures.
+   - **Manual Commit**: Consumers can manually commit offsets after processing a batch of messages. This provides more control but requires careful management.
+   - **Synchronous Commit**: Offsets are committed synchronously, ensuring offsets are only committed if the message processing is successful.
+
+**5. Can you use Kafka for large file transfers? What are the challenges?**
+
+   Answer: While Kafka can technically handle large files, it's not the ideal solution due to the overhead of storing files as messages. Challenges include:
+   - Message size limitations affecting broker performance and memory usage.
+   - Limited consumer processing speed for large messages.
+   - Difficulty in managing offsets for partially consumed large messages.
+
+**6. How can you scale Kafka Consumers?**
+
+   Answer: Kafka consumers can be scaled horizontally by adding more instances to a consumer group. Each consumer can read from different partitions, allowing for better parallelism. However, managing offsets and ensuring even distribution can be challenging.
+
+**7. Explain Kafka's partition rebalancing process.**
+
+   Answer: Partition rebalancing occurs when consumers join or leave a consumer group. Kafka ensures that each partition is consumed by only one consumer in the group. Rebalancing involves deciding which consumer takes ownership of which partition. The coordinator (a broker) manages this process.
+
+**8. What is the purpose of the `max.poll.records` configuration in Kafka Consumers?**
+
+   Answer: `max.poll.records` controls the maximum number of records a consumer can fetch in a single poll request. This configuration affects the balance between throughput and processing latency. Higher values can increase throughput but might lead to longer processing times.
+
+**9. Explain the concept of Kafka log compaction.**
+
+   Answer: Kafka log compaction is a mechanism to retain only the latest version of each key in a Kafka topic, ensuring that each key exists at least once in the log. This is useful for maintaining a current view of state, especially in cases where historical data is not critical.
+
+**10. How do you handle schema evolution in Kafka when messages change over time?**
+
+   Answer: Kafka's Avro support and Schema Registry can be used to manage schema evolution. Schemas are registered, and consumers can evolve their understanding of the schema over time. Backward and forward compatibility rules need to be followed to ensure smooth evolution.
+
+Remember, the goal of these questions is to gauge not only your theoretical knowledge but also your practical understanding and problem-solving skills related to Kafka. Be ready to discuss real-world scenarios, best practices, and any challenges you've faced during your experience with Kafka.
