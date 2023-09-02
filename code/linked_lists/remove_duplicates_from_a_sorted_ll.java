@@ -66,3 +66,9 @@ class Program {
   }
 }
 
+
+//for an unsorted linked list,
+3 possible solutions
+- Use 2 loops - keep one element at the beginning and check the rest of the LL for same element. If found, delete it. - O(n^2) 
+- Sort the linked list and then remove duplicates - O(nlogn)
+- Use a map of Node and Boolean type and if map entry is true, then remove it from the LL - O(n) time and O(n) space
