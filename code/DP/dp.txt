@@ -1,0 +1,31 @@
+Use DP in 2 situations : 
+1. When the optimal solution to your bigger problem can be obtained by the optimal solution of its sub problems
+2. when the bigger problem can be broken down into overlapping sub problems
+
+- Top Down approach = recursion + memoization
+Memoization = store the value of sub problems in a map or in a table
+- Bottom Up approach = Tabulation
+
+FOR TOP DOWN
+In code,
+1. always create a DP array of n+1 size
+2. store the solution of the recursive sub problems in the array
+3. before returning and after the base case, always check if dp[n] != -1. If so, return the value which is present
+ 
+FOR BOTTOM UP
+
+1.Create the dp array 
+2. Base case check
+3. Populate dp array with base case solutions, say dp[0] = 0 and dp[1] = 1
+4. Loop from next of base case till n and build using the base case values
+
+Take the example of climbing stairs. You need to climb from 0th stair to nth stair. Each time you can climb either 1 or 2 stairs. 
+f(0) = f(1) + f(2)
+Which means that the number of ways to reach the nth stair from the 0th stair is equal to the number of ways to reach nth stair from 1st stair + number od ways to reach nth stair from 2nd stair.
+
+This is synonymous to say that
+
+f(n) = f(n-1) + f(n-2)
+which means that the number of ways to reach the nth stair is either to come from the n-1th stair or to come from the n-2th stair.
+
+
