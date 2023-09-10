@@ -1,0 +1,1 @@
+In this case, dp[i] depends on dp[i - num[j]], which can be anywhere in the dp array. Unlike the previous problem, it does not depend only upon the previous 2 problems. Therefore, we cannot further improve the spcae complexity of this problem by eliminating the dp array.
