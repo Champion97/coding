@@ -1,3 +1,5 @@
+//https://www.codingninjas.com/studio/problems/reverse-list-in-k-groups_983644?leftPanelTab=0%3Fsource%3Dyoutube&campaign=Lovebabbar_codestudio_26thjan&utm_source=youtube&utm_medium=affiliate&utm_campaign=Lovebabbar_codestudio_26thjan
+
 /****************************************************************
 
  Following is the class structure of the Node class:
